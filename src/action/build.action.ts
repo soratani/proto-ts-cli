@@ -3,6 +3,7 @@ import { extname, join } from 'path';
 import { Input } from "../command";
 import { AbstractAction } from "./abstract.action";
 import { Logger } from "../utils/logger";
+import genProtoFiles from "../lib";
 
 export class BuildAction extends AbstractAction {
     public async handle(inputs?: Input[], options?: Input[], extraFlags?: string[]): Promise<void> {
@@ -13,5 +14,6 @@ export class BuildAction extends AbstractAction {
         if(!existsSync(sourcePath)) Logger.error('输入位置不存在');
         if (!!extname(outPath)) Logger.error('输出路径不能为文件');
         if (!existsSync(outPath)) mkdirSync(outPath, { recursive: true });
+        await genProtoFiles(sourcePath, out);
     }
 }
