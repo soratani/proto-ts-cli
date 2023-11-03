@@ -12,6 +12,7 @@ export class BuildAction extends AbstractAction {
         const sourcePath = join(process.cwd(), source);
         const outPath = join(process.cwd(), out);
         Logger.info(`输入路径:${sourcePath}`);
+        Logger.info(`输出路径:${outPath}`);
         if(!existsSync(sourcePath)) Logger.error('输入位置不存在');
         if (!!extname(outPath)) Logger.error('输出路径不能为文件');
         if (!existsSync(outPath)) mkdirSync(outPath, { recursive: true });
