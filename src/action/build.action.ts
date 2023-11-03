@@ -11,6 +11,7 @@ export class BuildAction extends AbstractAction {
         const out = options.find((o) => o.name === 'out')?.value as string;
         const sourcePath = join(process.cwd(), source);
         const outPath = join(process.cwd(), out);
+        Logger.info(`输入路径:${sourcePath}`);
         if(!existsSync(sourcePath)) Logger.error('输入位置不存在');
         if (!!extname(outPath)) Logger.error('输出路径不能为文件');
         if (!existsSync(outPath)) mkdirSync(outPath, { recursive: true });
