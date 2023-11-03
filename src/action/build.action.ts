@@ -3,7 +3,7 @@ import { extname, join } from 'path';
 import { Input } from "../command";
 import { AbstractAction } from "./abstract.action";
 import { Logger } from "../utils/logger";
-import { genProtoFiles } from "../lib";
+import { genProtoFiles } from "../tools";
 
 export class BuildAction extends AbstractAction {
     public async handle(inputs?: Input[], options?: Input[], extraFlags?: string[]): Promise<void> {
