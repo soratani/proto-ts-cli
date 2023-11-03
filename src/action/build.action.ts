@@ -11,10 +11,10 @@ export class BuildAction extends AbstractAction {
         const out = options.find((o) => o.name === 'out')?.value as string;
         const sourcePath = join(process.cwd(), source);
         const outPath = join(process.cwd(), out);
-        Logger.info(`输入路径:${sourcePath}`);
-        Logger.info(`输出路径:${outPath}`);
-        if(!existsSync(sourcePath)) Logger.error('输入位置不存在');
-        if (!!extname(outPath)) Logger.error('输出路径不能为文件');
+        Logger.info(`Input path:${sourcePath}`);
+        Logger.info(`Output path:${outPath}`);
+        if(!existsSync(sourcePath)) Logger.error('The input location does not exist');
+        if (!!extname(outPath)) Logger.error('The output path cannot be a file');
         if (!existsSync(outPath)) mkdirSync(outPath, { recursive: true });
         await genProtoFiles(sourcePath, out);
     }
