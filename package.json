@@ -1,0 +1,56 @@
+{
+  "name": "proto-ts-cli",
+  "version": "1.0.0",
+  "main": "lib/lib/index.js",
+  "bin": {
+    "pts": "./bin/bin"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc -p tsconfig.json",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lauweal/proto-ts-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lauweal/proto-ts-cli/issues"
+  },
+  "homepage": "https://github.com/Lauweal/proto-ts-cli#readme",
+  "description": "",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/chalk": "^2.2.0",
+    "@types/commander": "^2.12.2",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.8.10",
+    "chalk": "^3.0.0",
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "google-proto-files": "^4.0.0",
+    "lodash": "^4.17.21",
+    "protobufjs": "^7.2.5",
+    "stan-utils": "^0.15.0",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "chalk": "3.0.0",
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "google-proto-files": "^4.0.0",
+    "lodash": "^4.17.21",
+    "protobufjs": "^7.2.5",
+    "stan-utils": "^0.15.0"
+  }
+}
