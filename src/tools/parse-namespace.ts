@@ -1,7 +1,8 @@
 import { lodash } from 'stan-utils';
 import { Enum, MapField, Method, Namespace, ReflectionObject, Service, Type } from 'protobufjs';
 import {
-    firstLower,
+  firstLower,
+  firstUpper,
   formatTS,
   getFieldIsRequired,
   getNamespaceRoot,
@@ -20,7 +21,7 @@ import type {
 } from './type';
 
 const dtsTemplate = `<%= comment %>
-declare namespace <%= namespace %> {
+export namespace <%= namespace %> {
 <%= content %>
 }`;
 
@@ -57,7 +58,7 @@ const serviceFNExecutor = lodash.template(serviceFNTemplate);
  * @returns dts content
  */
 function parseNamespace(namespace: Namespace, filename?: string, visitor?: Visitor): string {
-  const moduleName = namespace.name;
+  const moduleName = firstUpper(namespace.name);
 
   const parsedNestedList: string[] = [];
 
@@ -127,16 +128,14 @@ function parseNamespace(namespace: Namespace, filename?: string, visitor?: Visit
             isMap: field instanceof MapField,
             value:
               field instanceof MapField
-                ? `Record<${protoTypeToTSType(field.keyType)}, ${
-                    childrenNested
-                      ? replaceNamespacePrefix(field.type, childrenNested)
-                      : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
-                  }>;`
-                : `${
-                    childrenNested
-                      ? replaceNamespacePrefix(field.type, childrenNested)
-                      : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
-                  }${endPrefix};`,
+                ? `Record<${protoTypeToTSType(field.keyType)}, ${childrenNested
+                  ? replaceNamespacePrefix(field.type, childrenNested)
+                  : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
+                }>;`
+                : `${childrenNested
+                  ? replaceNamespacePrefix(field.type, childrenNested)
+                  : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
+                }${endPrefix};`,
           });
           return acc;
         },
@@ -166,17 +165,15 @@ function parseNamespace(namespace: Namespace, filename?: string, visitor?: Visit
             const endPrefix = field.repeated ? '[]' : '';
             let fieldContent = `${field.name}${getFieldIsRequired(field) ? '' : '?'}: `;
             if (field instanceof MapField) {
-              fieldContent += `Record<${protoTypeToTSType(field.keyType)}, ${
-                childrenNested
-                  ? replaceNamespacePrefix(field.type, childrenNested)
-                  : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
-              }>;`;
+              fieldContent += `Record<${protoTypeToTSType(field.keyType)}, ${childrenNested
+                ? replaceNamespacePrefix(field.type, childrenNested)
+                : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
+                }>;`;
             } else {
-              fieldContent += `${
-                childrenNested
-                  ? replaceNamespacePrefix(field.type, childrenNested)
-                  : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
-              }${endPrefix};`;
+              fieldContent += `${childrenNested
+                ? replaceNamespacePrefix(field.type, childrenNested)
+                : protoTypeToTSType(field.type) || replaceNamespacePrefix(field.type)
+                }${endPrefix};`;
             }
             acc.push(fieldContent);
             return acc;
@@ -249,14 +246,14 @@ function parseNamespace(namespace: Namespace, filename?: string, visitor?: Visit
           // services options as remark
           (field.options
             ? Object.keys(field.options!)
-                .reduce<string[]>(
-                  (acc, k) => {
-                    acc.push(`// svr options: ${k} = ${field.options![k]}`);
-                    return acc;
-                  },
-                  ['\n'],
-                )
-                .join('\n')
+              .reduce<string[]>(
+                (acc, k) => {
+                  acc.push(`// svr options: ${k} = ${field.options![k]}`);
+                  return acc;
+                },
+                ['\n'],
+              )
+              .join('\n')
             : ''),
       };
     }
@@ -301,14 +298,14 @@ function parseNamespace(namespace: Namespace, filename?: string, visitor?: Visit
                   // services options as remark
                   (field.options
                     ? Object.keys(field.options!)
-                        .reduce<string[]>(
-                          (acc, k) => {
-                            acc.push(`// svr options: ${k} = ${field.options![k]}`);
-                            return acc;
-                          },
-                          ['\n'],
-                        )
-                        .join('\n')
+                      .reduce<string[]>(
+                        (acc, k) => {
+                          acc.push(`// svr options: ${k} = ${field.options![k]}`);
+                          return acc;
+                        },
+                        ['\n'],
+                      )
+                      .join('\n')
                     : ''),
               }),
             );
