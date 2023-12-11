@@ -42,7 +42,7 @@
     "google-proto-files": "^4.0.0",
     "lodash": "^4.17.21",
     "protobufjs": "^7.2.5",
-    "stan-utils": "^0.15.0",
+    "stan-utils": "^0.17.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
@@ -52,6 +52,6 @@
     "google-proto-files": "^4.0.0",
     "lodash": "^4.17.21",
     "protobufjs": "^7.2.5",
-    "stan-utils": "^0.15.0"
+    "stan-utils": "^0.17.0"
   }
 }
