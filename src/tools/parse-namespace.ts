@@ -21,6 +21,8 @@ import type {
 } from './type';
 
 const dtsTemplate = `<%= comment %>
+import { Observable } from 'rxjs';
+
 export namespace <%= namespace %> {
 <%= content %>
 }`;
@@ -41,7 +43,7 @@ export interface <%= name %> {
 }`;
 
 const serviceFNTemplate = `<%= comment %>
-<%= name %><R extends <%= requestType %>, O>(r: R, o?: O): Promise<<%= responseType %>>,`;
+<%= name %><R extends <%= requestType %>, O>(r: R, o?: O): Observable<<%= responseType %>>,`;
 
 const dtsExecutor = lodash.template(dtsTemplate);
 const interfaceExecutor = lodash.template(interfaceTemplate);
