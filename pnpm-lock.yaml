@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@changesets/cli':
     specifier: ^2.26.2
@@ -27,7 +31,7 @@ devDependencies:
     version: 10.3.10
   google-proto-files:
     specifier: ^4.0.0
-    version: 4.0.0
+    version: 4.1.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -1642,8 +1646,8 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /google-proto-files@4.0.0:
-    resolution: {integrity: sha512-SMzJqJkuwJ50ON15+UBF6KQWHNqnJZzlDGPq5Z6xgAFiQTlfXFVBiyFjz5jd4RHWWAsyEE6KGUMy3txul5dUsA==}
+  /google-proto-files@4.1.0:
+    resolution: {integrity: sha512-tqygU9QaPknc+YqnSFYvpGZQ4dy72ovUgUjUTXborBKdMJvg9uq+oJg+qp1jTvyXQii5foHdNpNr5ELU5tTfew==}
     engines: {node: '>=14.0.0'}
     dependencies:
       protobufjs: 7.2.5
