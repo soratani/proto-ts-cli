@@ -1,6 +1,6 @@
 {
   "name": "@frade-sam/proto-ts-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "lib/tools/index.js",
   "bin": {
     "pts": "./bin/bin"
