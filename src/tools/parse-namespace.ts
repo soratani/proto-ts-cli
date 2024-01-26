@@ -22,7 +22,6 @@ import type {
 
 const dtsTemplate = `<%= comment %>
 import { Observable } from 'rxjs';
-
 export namespace <%= namespace %> {
 <%= content %>
 }`;
