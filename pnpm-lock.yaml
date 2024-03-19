@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@changesets/cli':
     specifier: ^2.26.2
@@ -15,7 +19,7 @@ devDependencies:
     version: 8.1.0
   '@types/node':
     specifier: ^20.8.10
-    version: 20.8.10
+    version: 20.11.30
   chalk:
     specifier: 3.0.0
     version: 3.0.0
@@ -449,7 +453,7 @@ packages:
   /@types/cross-spawn@6.0.4:
     resolution: {integrity: sha512-GGLpeThc2Bu8FBGmVn76ZU3lix17qZensEI4/MPty0aZpm2CHfgEMis31pf5X5EiudYKcPAsWciAsCALoPo5dw==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/debug@4.1.10:
@@ -461,14 +465,14 @@ packages:
   /@types/fs-extra@9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/glob@8.1.0:
     resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/is-ci@3.0.3:
@@ -480,13 +484,13 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/listr@0.14.7:
     resolution: {integrity: sha512-NnlutIHVCfJE1BkTKE/qCAmJRV2p+VOf28Wj9ytQ3cEg49enXEShBzoiVXCdZnztpNEh70zxbwZZoS9TEz2Jwg==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
       rxjs: 6.6.7
     dev: true
 
@@ -527,7 +531,7 @@ packages:
   /@types/mkdirp@1.0.2:
     resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/ms@0.7.33:
@@ -542,8 +546,8 @@ packages:
     resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
     dev: true
 
-  /@types/node@20.8.10:
-    resolution: {integrity: sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==}
+  /@types/node@20.11.30:
+    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -555,14 +559,14 @@ packages:
   /@types/responselike@1.0.2:
     resolution: {integrity: sha512-/4YQT5Kp6HxUDb4yhRkm0bJ7TbjvTddqX7PZ5hz6qV3pxSo72f/6YPRo+Mu2DU307tm9IioO69l7uAwn5XNcFA==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/rimraf@3.0.2:
     resolution: {integrity: sha512-F3OznnSLAUxFrCEu/L5PY8+ny8DtcFRjx7fZZ9bycvXRi3KPTRS9HOitGZwvPg0juRhXFWIeKX58cnX5YqLohQ==}
     dependencies:
       '@types/glob': 8.1.0
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/semver@7.5.4:
@@ -572,7 +576,7 @@ packages:
   /@types/signale@1.4.6:
     resolution: {integrity: sha512-vd2s2P5D0/U+OvEsDhh2JRAKzzhr+Baa+SL2XRxacdJY8+6bh5iJS8r0TXglhO45duTZPxwpmH9lGHRGtCn8cw==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
     dev: true
 
   /@types/update-notifier@4.1.1:
@@ -2801,7 +2805,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.8.10
+      '@types/node': 20.11.30
       long: 5.2.3
     dev: true
 
